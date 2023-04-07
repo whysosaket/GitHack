@@ -11,6 +11,10 @@ REM Make sure that the format for Days is dd-mm-yyyy
 REM Change the start date here
 date 01-01-2022
 
+REM Change the location to an Empty folder where you want to create a local git repo
+cd C:\Users\Username\RepoName
+git init
+
 REM Get the current date
 for /f "tokens=2 delims==" %%G in ('wmic os get localdatetime /value') do set "dt=%%G"
 set "year=%dt:~0,4%"
@@ -77,7 +81,7 @@ for /l %%i in (1,1,%num_days%) do (
 
   REM 3 refers to 3 iteration, change it to any number of commits you want
   for /l %%i in (1,1,3) do (
-  cd C:\Users\Saket\Username\RepoName
+  cd C:\Users\Username\RepoName
   git stage . &&  git commit -m "Changes"
   )
 )
